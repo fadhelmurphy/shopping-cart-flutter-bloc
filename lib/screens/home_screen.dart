@@ -210,8 +210,7 @@ Widget shopItemsListBuilder(@required context, snapshot, param) {
                                   post["image"],
                                   post["color"],
                                   post["description"],
-                                  0,
-                                  true))));
+                                  0))));
                 },
                 child: Container(
                   margin: EdgeInsets.only(bottom: 19),
