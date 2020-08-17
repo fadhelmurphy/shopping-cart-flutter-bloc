@@ -195,6 +195,7 @@ Widget shopItemsListBuilder(@required context, snapshot, param) {
           itemCount: snapshot.data[param].length,
           itemBuilder: (BuildContext context, index) {
             final post = snapshot.data[param][index];
+            if(snapshot.data[param].length>0)
             return GestureDetector(
                 onTap: () {
                   // print('ListView Tapped');
@@ -210,7 +211,9 @@ Widget shopItemsListBuilder(@required context, snapshot, param) {
                                   post["image"],
                                   post["color"],
                                   post["description"],
-                                  0))));
+                                  snapshot.data['cart items'].length==0?0:post["count"],
+                                  snapshot.data['cart items'].length==0?false:post["perm"],
+                                  ))));
                 },
                 child: Container(
                   margin: EdgeInsets.only(bottom: 19),
