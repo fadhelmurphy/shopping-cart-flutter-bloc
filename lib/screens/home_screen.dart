@@ -12,10 +12,13 @@ class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
-
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    bloc.allItems['prod'].forEach((el) { if(el["count"]==null){
+      el["count"]=0;
+      el["perm"]=false;
+    } });
     return Scaffold(
         body: SafeArea(
       child: Column(children: <Widget>[
